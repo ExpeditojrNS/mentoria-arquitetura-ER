@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria Especializada para Escritórios de Arquitetura e Engenharia</title>
+    <meta name="description" content="Mentoria especializada com foco em posicionamento, estrutura e vendas & marketing. Mentores: Arq. Expedito Júnior e Eng. Ricardo Almeida.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #fff5f5;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #6c5ce7;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #6c5ce7;
+            border-radius: 2px;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pillar {
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.2);
+            border-color: rgba(108, 92, 231, 0.4);
+        }
+
+        .pillar-icon {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .pillar h3 {
+            color: #2d3436;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .pillar p {
+            color: #636e72;
+        }
+
+        .program-info {
+            background: #ffeaa7;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .program-info h3 {
+            color: #2d3436;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(108, 92, 231, 0.4);
+        }
+
+        .info-icon {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #6c5ce7;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .info-item p {
+            color: #636e72;
+            font-size: 0.95em;
+        }
+
+        .mentors {
+            background: #dfe6e9;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .mentors h3 {
+            color: #2d3436;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mentor {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+
+        .mentor:first-of-type {
+            border-left-color: #ff7675;
+        }
+
+        .mentor:last-of-type {
+            border-left-color: #74b9ff;
+        }
+
+        .mentor strong {
+            font-size: 1.1em;
+        }
+
+        .mentor:first-of-type strong {
+            color: #d63031;
+        }
+
+        .mentor:last-of-type strong {
+            color: #0984e3;
+        }
+
+        .mentor p {
+            color: #636e72;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 12px;
+            font-size: 0.95em;
+        }
+
+        .contact span {
+            background: #ffeaa7;
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: #2d3436;
+            border: 1px solid rgba(45, 52, 54, 0.1);
+        }
+
+        .support-section {
+            background: linear-gradient(135deg, #a8e6cf 0%, #81c4e8 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid rgba(116, 185, 255, 0.4);
+        }
+
+        .support-section h3 {
+            color: #0984e3;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .support-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 3px solid #74b9ff;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .support-item:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .support-icon {
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .support-item p {
+            color: #2d3436;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        #formContainer iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-locked {
+            filter: blur(3px);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .unlock-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .unlock-message {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .unlock-message h2 {
+            color: #6c5ce7;
+            margin-bottom: 20px;
+        }
+
+        .unlock-message p {
+            color: #636e72;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .unlock-btn {
+            background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .unlock-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-button svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            max-width: 250px;
+        }
+
+        .whatsapp-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+
+        .whatsapp-tooltip p {
+            margin: 0;
+            color: #2d3436;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .whatsapp-tooltip strong {
+            color: #25D366;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .questionnaire-section {
+            background: linear-gradient(135px, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            border: 2px solid #fab1a0;
+        }
+
+        .questionnaire-section h3 {
+            color: #2d3436;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .questionnaire-section > p {
+            color: #636e72;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .questionnaire-btn {
+            background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .questionnaire-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+        }
+
+        .lgpd-notice {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #00b894;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .lgpd-notice small {
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="unlockOverlay" class="unlock-overlay">
+        <div class="unlock-message">
+            <h2>🔒 Conteúdo Bloqueado</h2>
+            <p>Para acessar todo o conteúdo da mentoria e conhecer os detalhes completos, por favor preencha nosso questionário rápido.</p>
+            <button class="unlock-btn" onclick="unlockContent()">📋 Preencher Questionário</button>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5579999780047?text=Olá!%20Favor%20responder%20o%20questionário,%20caso%20já%20tenha%20respondido,%20como%20podemos%20lhe%20ajudar?%20Entre%20em%20contato." target="_blank" class="whatsapp-button" id="whatsappBtn">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.409 1.417-5.267-0.312-0.524c-1.342-2.225-2.048-4.807-2.048-7.457 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.893 1.123-1.094 1.352c-0.201 0.23-0.402 0.259-0.748 0.086s-1.461-0.539-2.785-1.722c-1.031-0.922-1.727-2.061-1.929-2.407s-0.022-0.534 0.152-0.707c0.156-0.155 0.346-0.402 0.519-0.604s0.23-0.346 0.346-0.576c0.117-0.23 0.058-0.432-0.029-0.604s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.2-0.010-0.431-0.012-0.662-0.012s-0.604 0.086-0.92 0.432c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.172 0.23 2.425 3.732 5.872 5.234 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.662-0.099 2.049-0.835 2.335-1.642 0.288-0.807 0.288-1.501 0.201-1.642-0.086-0.144-0.316-0.23-0.662-0.403z"/>
+        </svg>
+    </a>
+
+    <div class="whatsapp-tooltip" id="whatsappTooltip">
+        <strong>💬 Fale Conosco!</strong>
+        <p>Tire suas dúvidas pelo WhatsApp</p>
+    </div>
+
+    <div class="container content-locked" id="mainContent">
+        <div class="header">
+            <h1>Mentoria Especializada</h1>
+            <p>Transforme seu escritório de Arquitetura ou Engenharia</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Três Pilares do Sucesso</h2>
+                <div class="pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">🎯</div>
+                        <h3>Posicionamento</h3>
+                        <p>Defina seu espaço único no mercado</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">🏗️</div>
+                        <h3>Estrutura</h3>
+                        <p>Organize processos e equipe</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">📈</div>
+                        <h3>Vendas & Marketing</h3>
+                        <p>Atraia e conquiste clientes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-info">
+                <h3>Como Funciona</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">📅</div>
+                        <strong>Duração</strong>
+                        <p>Até 6 meses</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🤝</div>
+                        <strong>Encontros</strong>
+                        <p>Reuniões mensais</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📋</div>
+                        <strong>Atividades</strong>
+                        <p>Práticas personalizadas</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">💡</div>
+                        <strong>Experiências</strong>
+                        <p>Troca contínua</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="support-section">
+                <h3>Suporte Completo Durante a Mentoria</h3>
+                <div class="support-grid">
+                    <div class="support-item">
+                        <span class="support-icon">💬</span>
+                        <p>Suporte via WhatsApp para tirar dúvidas</p>
+                    </div>
+                    <div class="support-item">
+                        <span class="support-icon">🛠️</span>
+                        <p>Sugestão de ferramentas especializadas</p>
+                    </div>
+                    <div class="support-item">
+                        <span class="support-icon">📄</span>
+                        <p>Documentos e modelos prontos</p>
+                    </div>
+                    <div class="support-item">
+                        <span class="support-icon">🎯</span>
+                        <p>Experiências práticas do mercado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mentors">
+                <h3>Seus Mentores</h3>
+                <div class="mentor">
+                    <strong>Arq. Expedito Júnior</strong>
+                    <p>Mais de 20 anos de experiência no mercado nacional, com atuação destacada em Sergipe. Especialista em gestão e desenvolvimento de escritórios de arquitetura.</p>
+                    <div class="contact">
+                        <span>📧 expedito@novasergipe.com.br</span>
+                        <span>📱 @expeditojr_ajuse</span>
+                    </div>
+                </div>
+                <div class="mentor">
+                    <strong>Eng. Ricardo Almeida</strong>
+                    <p>Duas décadas de vivência no mercado sergipano e nacional. Referência em estruturação e crescimento de empresas de engenharia.</p>
+                    <div class="contact">
+                        <span>📱 @eng.ricardoalmeida</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p style="text-align: center; color: #636e72; line-height: 1.8;">
+                    Aprenda com profissionais consolidados que conhecem profundamente os desafios e oportunidades do mercado. Experiência prática que gera resultados reais.
+                </p>
+            </div>
+
+            <div class="questionnaire-section">
+                <h3>Interessado na Mentoria?</h3>
+                <p>Preencha nosso questionário rápido para conhecermos melhor seu escritório e suas necessidades.</p>
+                <button class="questionnaire-btn" onclick="window.open('https://forms.gle/UEoS1jHmsCcTg1EF9', '_blank')">
+                    📋 Preencher Questionário
+                </button>
+                <p class="lgpd-notice">
+                    <small>
+                        🔒 Seus dados serão tratados de acordo com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018). 
+                        Coletamos apenas informações necessárias para entender seu perfil profissional e oferecer a melhor experiência 
+                        de mentoria. Seus dados não serão compartilhados com terceiros e você pode solicitar sua exclusão a qualquer momento.
+                    </small>
+                </p>
+            </div>
+
+            <button class="cta" onclick="window.open('https://instagram.com/expeditojr_ajuse', '_blank')">
+                Marque sua Reunião de Apresentação
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const mainContent = document.getElementById('mainContent');
+        const unlockOverlay = document.getElementById('unlockOverlay');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const whatsappTooltip = document.getElementById('whatsappTooltip');
+        let isUnlocked = false;
+
+        function unlockContent() {
+            // Abre o questionário em nova aba
+            window.open('https://forms.gle/UEoS1jHmsCcTg1EF9', '_blank');
+            
+            // Desbloqueia o conteúdo
+            isUnlocked = true;
+            unlockOverlay.style.display = 'none';
+            mainContent.classList.remove('content-locked');
+        }
+
+        function toggleForm() {
+            window.open('https://forms.gle/UEoS1jHmsCcTg1EF9', '_blank');
+        }
+
+        // Mostrar tooltip do WhatsApp após 5 segundos
+        setTimeout(() => {
+            whatsappTooltip.classList.add('show');
+            setTimeout(() => {
+                whatsappTooltip.classList.remove('show');
+            }, 5000);
+        }, 5000);
+
+        // Mostrar tooltip ao passar o mouse
+        whatsappBtn.addEventListener('mouseenter', () => {
+            whatsappTooltip.classList.add('show');
+        });
+
+        whatsappBtn.addEventListener('mouseleave', () => {
+            whatsappTooltip.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
